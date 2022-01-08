@@ -1,26 +1,26 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <site-menu/>
+  <speaker-model-display/>
+  <customization-controls/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import SiteMenu from './components/SiteMenu.vue';
+import SpeakerModelDisplay from './components/SpeakerModelDisplay.vue';
+import CustomizationControls from './components/CustomizationControls.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    SiteMenu,
+    SpeakerModelDisplay,
+    CustomizationControls
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  
 }
 </style>
