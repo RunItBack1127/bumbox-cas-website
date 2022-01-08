@@ -1,9 +1,11 @@
 <template>
-  <div id="site-menu-container">
+  <header id="site-menu-container">
     <site-menu/>
-  </div>
-  
-  <speaker-model-display/>
+  </header>
+
+  <section id="speaker-model-container">
+    <speaker-model-display/>
+  </section>
   
   <section id="site-customization-container">
     <div id="customization-container">
@@ -47,6 +49,42 @@ body {
 
 #app {
   width: 100%;
+  height: 100%;
+}
+
+header,
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+header {
+  height: 100px;
+}
+
+section {
+  height: 100%;
+}
+
+#site-menu-container {
+  z-index: 1000;
+}
+
+#site-customization-container {
+  z-index: 100;
+}
+
+#customization-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
   height: 100%;
 }
 </style>
