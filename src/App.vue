@@ -76,8 +76,13 @@ section {
   z-index: 1000;
 }
 
-#site-customization-container {
+#speaker-model-container {
+  background: linear-gradient(45deg, #fff 57%, #f00 100%);
   z-index: 100;
+}
+
+#site-customization-container {
+  z-index: 1000;
 }
 
 #customization-container {
