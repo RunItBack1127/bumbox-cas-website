@@ -30,36 +30,36 @@ export default {
             this.gltfLoader = new THREE.GLTFLoader();
             this.gltfLoader.load('https://raw.githubusercontent.com/RunItBack1127/bumbox-cas-website/main/src/assets/models/UE_MEGABOOM.gltf', (speakerModel) => {
                 
-                const speaker = speakerModel.scene;
+                this.speaker = speakerModel.scene;
 
-                const speakerBBox = new THREE.Box3().setFromObject(speaker);
+                const speakerBBox = new THREE.Box3().setFromObject(this.speaker);
                 const speakerCenter = {
                     x: ( speakerBBox.max.x + speakerBBox.min.x ) / 2,
                     y: ( speakerBBox.max.y + speakerBBox.min.y ) / 2,
                     z: ( speakerBBox.max.z + speakerBBox.min.z ) / 2,                    
                 };
-                speaker.translateX(-speakerCenter.x);
-                speaker.translateY(-speakerCenter.y);
-                speaker.translateZ(-speakerCenter.z);
+                this.speaker.translateX(-speakerCenter.x);
+                this.speaker.translateY(-speakerCenter.y);
+                this.speaker.translateZ(-speakerCenter.z);
+
+                this.scene.add(this.speaker);
 
                 this.speakerPivot = new THREE.Group();
-                this.speakerPivot.add(this.camera);
-                this.speakerPivot.add(this.pointLight);
-
+                this.speakerPivot.add(this.speaker);
                 this.scene.add(this.speakerPivot);
 
-                this.scene.add(speaker);
+                this.speakerPivot.rotation.y = -0.25;
+                
+                this.cameraPivot = new THREE.Group();
+                this.cameraPivot.add(this.camera);
+                this.cameraPivot.add(this.pointLight);
+                this.scene.add(this.cameraPivot);
+
                 this.positionSpeakerCanvas();
             });
 
             window.addEventListener('resize', () => {
                 this.resize();
-            });
-
-            window.addEventListener('keypress', (event) => {
-                if(event.key === 'a') {
-                    this.speakerPivot.rotation.y += 0.25;
-                }
             });
         },
         positionSpeakerCanvas: function() {
