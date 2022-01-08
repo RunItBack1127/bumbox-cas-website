@@ -10,6 +10,10 @@
   "dependencies": {
     "axios": "^0.24.0",
     "core-js": "^3.6.5",
+    "cors": "^2.8.5",
+    "downloadjs": "^1.4.7",
+    "express": "^4.17.2",
+    "static-serve": "0.0.1",
     "three": "^0.136.0",
     "vue": "^3.0.0",
     "vuex": "^3.6.2"

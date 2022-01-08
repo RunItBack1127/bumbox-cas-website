@@ -1,7 +1,15 @@
 <template>
-  <site-menu/>
+  <div id="site-menu-container">
+    <site-menu/>
+  </div>
+  
   <speaker-model-display/>
-  <customization-controls/>
+  
+  <section id="site-customization-container">
+    <div id="customization-container">
+      <customization-controls/>
+    </div>
+  </section>
 </template>
 
 <script>
